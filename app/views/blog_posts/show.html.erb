@@ -1,3 +1,8 @@
 <%= @blog_post.title %>
+</br>
 <%= @blog_post.author %>
+</br>
 <%= @blog_post.content %>
+</br>
+<%= link_to 'Edit', edit_blog_post_path(@blog_post) %>
+<%= link_to 'Blog Posts', blog_posts_path %>
