@@ -1,5 +1,5 @@
 class BlogPostsController < ApplicationController
-  before_action :set_blog_post, only: [:show, :edit, :update]
+  before_action :set_blog_post, only: [:show, :edit, :update, :destroy]
   def index
     @blog_posts=BlogPost.all
   end
@@ -21,6 +21,11 @@ class BlogPostsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @blog_post.destroy
+    redirect_to blog_posts_path
   end
 
 
