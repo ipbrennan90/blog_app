@@ -1,0 +1,8 @@
+List of User Posts
+
+<% @user.posts.each do |post|%>
+
+<%= link_to post.title, user_post_path(@user.id, post.id) %>
+<%= post.content %>
+
+<% end %>

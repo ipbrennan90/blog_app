@@ -9,3 +9,7 @@ def sign_in
   fill_in :password, with: @user.password
   click_on "Sign In"
 end
+
+def create_post(user)
+  @post= user.posts.create!(title: "This is a post", content: "this is the most amazing post ever, don't even pretend like it's not")
+end

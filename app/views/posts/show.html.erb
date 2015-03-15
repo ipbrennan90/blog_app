@@ -1,0 +1,7 @@
+<%= @post.title %>
+<%= @post.content %>
+
+<%= form_for [@user, @post] do |f| %>
+<%= f.label :category_id, "Category" %>
+<%= f.collection_select(:category_id, Category.all, :id, :category_title,{include_blank: 'Please select category'}) %>
+<% end %>
