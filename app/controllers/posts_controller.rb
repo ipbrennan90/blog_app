@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :find_and_set_user
-  before_action :set_post, only: [:show]
+  before_action :set_post, only: [:show, :update]
 
   def new
     @post = @user.posts.new
@@ -24,6 +24,13 @@ class PostsController < ApplicationController
   def show
   end
 
+  def update
+    if @post.update(post_params)
+      redirect_to user_post_path(@user,@post), notice: "Post has been successfully updated"
+    else
+      redirect_to user_post_path(@user,@post)
+    end
+  end
 
   private
 
