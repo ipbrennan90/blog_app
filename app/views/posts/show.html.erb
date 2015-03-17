@@ -4,7 +4,7 @@
 <%= notice %>
 
 
-<%= form_for @post, url: user_post_path(@user, @post) do |f| %>
+<%= form_for [@user, @post] do |f| %>
 <%= f.label :category_id, "Category" %>
 <%= f.collection_select(:category_id, Category.all, :id, :title, {include_blank: "Please select category"}) %>
 <%= f.submit "Update" %>
