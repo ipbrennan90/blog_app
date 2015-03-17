@@ -8,6 +8,8 @@ group :development, :test do
 
 end
 
+gem "declarative_authorization", source: "http://gemcutter.org"
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
